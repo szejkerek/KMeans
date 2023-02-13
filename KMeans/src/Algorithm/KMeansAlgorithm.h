@@ -26,4 +26,6 @@ private:
 	void InitializeCluster(Cluster& cluster, int ClusterID);
 	Cluster FindMinCluster(const Point& point);
 	void CalculateClustersPosition();
+	std::vector<double> CalculateRandomClusterPosition();
+
 };

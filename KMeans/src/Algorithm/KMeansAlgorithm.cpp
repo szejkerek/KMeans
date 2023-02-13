@@ -10,10 +10,10 @@
 
 KMeansAlgorithm::KMeansAlgorithm(const std::vector<Point>& points, int dimensionsNumber, int clusersNumber)
 {
+	srand(time(NULL));
 	_allPoints = points;
 	_dimensionsNumber = dimensionsNumber;
 	_clusersNumber = clusersNumber;
-	srand(time(NULL));
 
 	for (int i = 0; i < clusersNumber; i++)
 	{
@@ -98,13 +98,41 @@ void KMeansAlgorithm::PrintResultsOnScreen()
 	}
 }
 
+static void MinMax(const std::vector<Point>& vec, int posIndex, double& min, double& max) {
+	min = vec[0].position[posIndex];
+	max = vec[0].position[posIndex];
+
+	for (Point num : vec) {
+		double posValue = num.position[posIndex];
+		if (posValue < min) {
+			min = posValue;
+		}
+		if (posValue > max) {
+			max = posValue;
+		}
+	}
+}
+
+std::vector<double> KMeansAlgorithm::CalculateRandomClusterPosition()
+{
+	std::vector<double> position;
+	for (int i = 0; i < _dimensionsNumber; i++)
+	{ 
+		double min;
+		double max;
+		MinMax(_allPoints, i, min, max);
+
+		position.push_back(GetRandomNumber(min, max));
+	}
+	return position;
+}
+
 void KMeansAlgorithm::InitializeCluster(Cluster& cluster, int clusterID)
 {
 	cluster.cluserID = clusterID;
 	for (int i = 0; i < _dimensionsNumber; i++)
 	{
-		double randomNumber = GetRandomNumber(-10, 10);
-		cluster.position.push_back(randomNumber);
+		cluster.position = CalculateRandomClusterPosition();
 	}
 }
 
