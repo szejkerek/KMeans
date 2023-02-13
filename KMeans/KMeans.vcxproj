@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Loading data\LoadData.cpp" />
     <ClCompile Include="src\KMeans.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Data structures\Cluster.h" />
+    <ClInclude Include="src\Loading data\LoadData.h" />
+    <ClInclude Include="src\Data structures\Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
