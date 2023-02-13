@@ -4,6 +4,6 @@
 
 struct Cluster
 {
-	std::vector<double> values;
-	std::vector<Point> points;
+	int cluserID;
+	std::vector<double> position;
 };

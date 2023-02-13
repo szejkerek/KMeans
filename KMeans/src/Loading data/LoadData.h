@@ -18,10 +18,10 @@ struct LoadData
             double value;
 
             while (lineStream >> value) {
-                point.values.push_back(value);
+                point.position.push_back(value);
             }
 
-            if (point.values.size() != dimesnions) {
+            if (point.position.size() != dimesnions) {
                 throw std::runtime_error("Values don't match given dimensions!");
             }
 

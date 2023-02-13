@@ -2,5 +2,6 @@
 #include <vector>
 struct Point
 {
-	std::vector<double> values;
+	int currentCluserID;
+	std::vector<double> position;
 };
