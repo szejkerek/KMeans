@@ -14,13 +14,10 @@ int main(int arg, char** argv)
         int dimensions = parametersReader.GetDimensionsValue();
         int clusters = parametersReader.GetClustersValue();
 
-        //std::string inputFile = "input2.txt";
-        //std::string outputFile = "output.txt";
-        //int dimensions = 2;
-        //int clusters = 3;
-
         std::vector<Point> points = loader.ReadFile(inputFile, dimensions);
-        KMeansAlgorithm algorithm(points, dimensions, clusters);
+        KMeansAlgorithm algorithm;
+
+        algorithm.Initialize(points, dimensions, clusters);
         algorithm.PerformAlgorithm(10);
         algorithm.SaveValuesToFile(outputFile);
     }

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 
-KMeansAlgorithm::KMeansAlgorithm(const std::vector<Point>& points, int dimensionsNumber, int clusersNumber)
+void KMeansAlgorithm::Initialize(const std::vector<Point>& points, int dimensionsNumber, int clusersNumber)
 {
 	srand(time(NULL));
 	_allPoints = points;
@@ -30,7 +30,6 @@ void KMeansAlgorithm::PerformAlgorithm(int iterations)
 		AssignClustersToPoints();
 		CalculateClustersPosition();
 	}
-	//to comment out
 	PrintResultsOnScreen();
 }
 

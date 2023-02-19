@@ -5,6 +5,7 @@
 
 class KMeansAlgorithm 
 {
+private:
 	std::vector<Cluster> _clusters;
 	std::vector<Point> _allPoints;
 	std::vector < std::pair<double, double> > _minMaxValues;
@@ -13,8 +14,7 @@ class KMeansAlgorithm
 	int _clusersNumber = 0;
 
 public:
-	KMeansAlgorithm(const std::vector<Point>& points, int dimensionsNumber, int clusersNumber);
-
+	void Initialize(const std::vector<Point>& points, int dimensionsNumber, int clusersNumber);
 	void PerformAlgorithm(int iterations);
 	void SaveValuesToFile(const std::string& filename);
 
@@ -27,5 +27,4 @@ private:
 	Cluster FindMinCluster(const Point& point);
 	void CalculateClustersPosition();
 	std::vector<double> CalculateRandomClusterPosition();
-
 };

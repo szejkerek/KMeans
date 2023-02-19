@@ -66,7 +66,6 @@ public:
 
 				}
 			}
-
 			i++;
 		}
 
@@ -81,8 +80,8 @@ public:
 
 	}
 
-	std::string GetInputFile() { return inputFile; };
+	std::string GetInputFile()	{ return inputFile; };
 	std::string GetOutputFile() { return outputFile; };
-	int GetClustersValue() { return std::stoi(clustersValue); };
-	int GetDimensionsValue() { return std::stoi(dimensionsValue); };
+	int GetClustersValue()		{ return std::stoi(clustersValue); };
+	int GetDimensionsValue()	{ return std::stoi(dimensionsValue); };
 };
