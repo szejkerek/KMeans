@@ -36,7 +36,6 @@ void KMeansAlgorithm::PerformAlgorithm(int iterations)
 void KMeansAlgorithm::SaveValuesToFile(const std::string& filename)
 {
 	std::ofstream myfile(filename);
-
 	if (!myfile)
 	{
 		throw std::runtime_error("Couldn't create output file!");
